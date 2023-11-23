@@ -1,4 +1,4 @@
 package model.data.dao;
 
-public class EntradaDao {
+public class EntradaDAO {
 }

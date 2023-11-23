@@ -2,14 +2,17 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+import java.util.ArrayList;
 
 public class EventoMusical {
     private String nombreEvento;
     private Date fecha;
     private String lugar;
     private Artista artista;
-    private List<Asistente> asistentes;
+    private ArrayList<Asistente> asistentes;
+    private ArrayList<Entrada> entradas;
+
+
 
     public EventoMusical(String nombreEvento, Date fecha, String lugar, Artista artista) {
         this.nombreEvento = nombreEvento;
@@ -17,6 +20,7 @@ public class EventoMusical {
         this.lugar = lugar;
         this.artista = artista;
         this.asistentes = new ArrayList<>();
+        this.entradas = new ArrayList<Entrada>();
     }
 
     public String getNombreEvento() {
@@ -51,7 +55,7 @@ public class EventoMusical {
         this.artista = artista;
     }
 
-    public List<Asistente> getAsistentes() {
+    public ArrayList<Asistente> getAsistentes() {
         return asistentes;
     }
 

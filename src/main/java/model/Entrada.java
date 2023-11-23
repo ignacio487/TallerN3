@@ -4,6 +4,8 @@ public class Entrada {
     private String tipo;
     private double precio;
     private int cantidadDisponible;
+    private Asistente comprador;
+    private EventoMusical evento;
 
     public Entrada(String tipo, double precio, int cantidadDisponible) {
         this.tipo = tipo;
@@ -45,6 +47,4 @@ public class Entrada {
             System.out.println("No hay suficientes entradas disponibles de tipo " + tipo);
         }
     }
-
-
 }
