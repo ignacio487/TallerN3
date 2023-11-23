@@ -4,40 +4,20 @@ public class Entrada {
     private String tipo;
     private double precio;
     private int cantidadDisponible;
-    private Asistente comprador;
     private EventoMusical evento;
+    private EventoMusical getEvento(){
+        return new evento();
+    }
 
-    public Entrada(String tipo, double precio, int cantidadDisponible) {
+
+    public Entrada(String tipo, double precio, int cantidadDisponible, EventoMusical evento) {
         this.tipo = tipo;
         this.precio = precio;
         this.cantidadDisponible = cantidadDisponible;
+        this.evento = evento; // Asignación del evento pasado como argumento al constructor
     }
 
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public int getCantidadDisponible() {
-        return cantidadDisponible;
-    }
-
-    public void setCantidadDisponible(int cantidadDisponible) {
-        this.cantidadDisponible = cantidadDisponible;
-    }
-
+    // Getters y Setters para tipo, precio, cantidadDisponible y evento
 
     public void venderEntradas(int cantidad) {
         if (cantidad <= cantidadDisponible && cantidad > 0) {
