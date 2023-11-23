@@ -4,50 +4,35 @@ public class Entrada {
     private String tipo;
     private double precio;
     private int cantidadDisponible;
-    private Asistente comprador;
     private EventoMusical evento;
 
-    public Entrada(String tipo, double precio, int cantidadDisponible) {
+    public Entrada(String tipo, double precio, int cantidadDisponible, EventoMusical evento) {
         this.tipo = tipo;
         this.precio = precio;
         this.cantidadDisponible = cantidadDisponible;
-        this.evento=getEvento();
+        this.evento = evento; // Asignación del evento pasado como argumento al constructor
     }
-
-    private EventoMusical getEvento() {
-        return new EventoMusical();
-    }
-
 
     public String getTipo() {
         return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
     public int getCantidadDisponible() {
         return cantidadDisponible;
     }
 
-    public void setCantidadDisponible(int cantidadDisponible) {
-        this.cantidadDisponible = cantidadDisponible;
+    public EventoMusical getEvento() {
+        return evento;
     }
-
 
     public void venderEntradas(int cantidad) {
         if (cantidad <= cantidadDisponible && cantidad > 0) {
             cantidadDisponible -= cantidad;
-            System.out.println("Se vendieron " + cantidad + " entradas de tipo " + tipo);
+            System.out.println("Se vendieron " + cantidad + " entradas de tipo " + tipo + " para el evento " + evento.getNombreEvento());
         } else {
             System.out.println("No hay suficientes entradas disponibles de tipo " + tipo);
         }

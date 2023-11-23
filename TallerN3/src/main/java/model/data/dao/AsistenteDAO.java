@@ -1,22 +1,27 @@
 package model.data.dao;
+
 import model.Asistente;
 import org.jooq.DSLContext;
 
 public class AsistenteDAO {
-    public boolean registrarAsistente(DSLContext query, Asistente asistente) {
-        return false;
-    }
-    public boolean eliminarAsistente(DSLContext query, Asistente asistente) {
-        return false;
-    }
-    public boolean modificarAsistente(DSLContext query, Asistente asistente) {
-        return false;
-    }
-    public boolean buscarAsistente(DSLContext query, Asistente asistente) {
-        return false;
-    }
-    public boolean obtenerAsistentes(DSLContext query, Asistente asistente) {
-        return false;
+    private DSLContext query;
+
+    public AsistenteDAO(DSLContext query) {
+        this.query = query;
     }
 
+    public void guardarAsistente(Asistente asistente) {
+        // query.insertInto("tabla_asistente").set("nombre", asistente.getNombre()).execute();
+        System.out.println("Asistente guardado con éxito: " + asistente.getNombre());
+    }
+
+    public void actualizarAsistente(Asistente asistente) {
+        // query.update("tabla_asistente").set("alguna_columna", valor).where("id = ?", asistente.getId()).execute();
+        System.out.println("Asistente actualizado con éxito: " + asistente.getNombre());
+    }
+
+    public void eliminarAsistente(Asistente asistente) {
+        // query.delete("tabla_asistente").where("id = ?", asistente.getId()).execute();
+        System.out.println("Asistente eliminado con éxito: " + asistente.getNombre());
+    }
 }

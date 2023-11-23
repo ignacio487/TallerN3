@@ -25,6 +25,10 @@ public class DBGenerator {
         }
     }
 
+    private static void crearTablas(DSLContext create) {
+
+    }
+
     private static void crearBaseDato(DSLContext create, String nombreBD) {
         create.createDatabaseIfNotExists(nombreBD).execute();
     }

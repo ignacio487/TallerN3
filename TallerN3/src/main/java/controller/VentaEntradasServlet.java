@@ -13,7 +13,7 @@ public class VentaEntradasServlet {
     }
 
     public void venderEntradas(DSLContext query, EventoMusical evento, String tipoEntrada, double precio, int cantidad) {
-        Entrada entrada = new Entrada(evento, tipoEntrada, precio, cantidad);
+        Entrada entrada = new Entrada(tipoEntrada, precio, cantidad, evento); // Ajuste en la creación de la entrada
         // Aquí podrías incluir validaciones adicionales antes de vender las entradas
         if (entrada != null) {
             entradaDAO.venderEntrada(query, entrada); // Llamada al método venderEntrada en EntradaDAO para registrar la venta de entradas
