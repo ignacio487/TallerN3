@@ -20,11 +20,6 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>5.3.9</version> <!-- Versión específica de Spring -->
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
             <version>5.3.9</version> <!-- Versión específica de Spring -->
         </dependency>

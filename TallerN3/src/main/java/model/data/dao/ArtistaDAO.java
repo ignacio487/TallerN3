@@ -21,7 +21,6 @@ public class ArtistaDAO {
     }
 
     public void eliminarArtista(Artista artista) {
-
         query.delete("tabla_artista").where("id = ?", artista.getNombreArtistico()).execute();
         System.out.println("Artista eliminado con éxito: " + artista.getNombreArtistico());
     }
