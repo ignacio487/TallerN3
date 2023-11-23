@@ -1,6 +1,5 @@
 package model.data;
 
-import model.data.DBConnector;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;

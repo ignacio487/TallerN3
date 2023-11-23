@@ -14,13 +14,13 @@ public class EventoMusical {
 
 
 
-
     public EventoMusical(String nombreEvento, Date fecha, String lugar, Artista artista) {
         this.nombreEvento = nombreEvento;
         this.fecha = fecha;
         this.lugar = lugar;
         this.artista = artista;
         this.asistentes = new ArrayList<>();
+        this.entradas = new ArrayList<Entrada>();
     }
 
     public String getNombreEvento() {

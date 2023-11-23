@@ -4,11 +4,18 @@ public class Entrada {
     private String tipo;
     private double precio;
     private int cantidadDisponible;
+    private Asistente comprador;
+    private EventoMusical evento;
 
     public Entrada(String tipo, double precio, int cantidadDisponible) {
         this.tipo = tipo;
         this.precio = precio;
         this.cantidadDisponible = cantidadDisponible;
+        this.evento=getEvento();
+    }
+
+    private EventoMusical getEvento() {
+        return new EventoMusical();
     }
 
 
@@ -45,6 +52,4 @@ public class Entrada {
             System.out.println("No hay suficientes entradas disponibles de tipo " + tipo);
         }
     }
-
-
 }
