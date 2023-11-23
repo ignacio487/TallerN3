@@ -15,7 +15,7 @@ public class RegistroAsistenteServlet {
         Asistente nuevoAsistente = new Asistente(nombre);
 
         if (nuevoAsistente != null) {
-            asistenteDAO.registrarAsistente(nuevoAsistente); // Llamada al método en AsistenteDAO para guardar el nuevo asistente
+            asistenteDAO.guardarAsistente(nuevoAsistente); // Llamada al método en AsistenteDAO para guardar el nuevo asistente
             System.out.println("Asistente registrado con éxito: " + nombre);
         } else {
             System.out.println("Error: Intento de registro de asistente fallido");

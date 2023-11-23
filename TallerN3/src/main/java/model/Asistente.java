@@ -11,7 +11,7 @@ public class Asistente {
     private ArrayList<EventoMusical> eventos;
 
 
-    public Asistente(String nombre, String apellido, String email, String telefono, String preferenciasMusicales) {
+    public Asistente(String nombre) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;

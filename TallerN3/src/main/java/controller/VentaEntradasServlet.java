@@ -13,14 +13,18 @@ public class VentaEntradasServlet {
     }
 
     public void venderEntradas(DSLContext query, EventoMusical evento, String tipoEntrada, double precio, int cantidad) {
-        Entrada entrada = new Entrada(tipoEntrada, precio, cantidad, evento); // Ajuste en la creación de la entrada
-        // Aquí podrías incluir validaciones adicionales antes de vender las entradas
-        if (entrada != null) {
-            entradaDAO.venderEntrada(query, entrada); // Llamada al método venderEntrada en EntradaDAO para registrar la venta de entradas
-            System.out.println("Entradas vendidas para el evento: " + evento.getNombreEvento());
-            // Aquí podrías incluir lógica adicional, como actualización de inventario, registro de la transacción, etc.
-        } else {
-            System.out.println("Error: Intento de venta de entradas fallido");
+        Entrada entrada = new Entrada(tipoEntrada, precio, cantidad, evento);
+
+        try {
+            if (entrada != null) {
+                entradaDAO.venderEntrada(query, entrada);
+                System.out.println("Entradas vendidas para el evento: " + evento.getNombreEvento());
+            } else {
+                System.out.println("Error: Intento de venta de entradas fallido");
+            }
+        } catch (Exception e) {
+            System.out.println("Error al intentar vender entradas: " + e.getMessage());
+            e.printStackTrace(); // Esta línea mostrará detalles completos de la excepción en la consola para ayudar en la depuración.
         }
     }
 }

@@ -11,19 +11,18 @@ public class ArtistaDAO {
     }
 
     public void guardarArtista(Artista artista) {
-        // query.insertInto("tabla_artista").set("nombre", artista.getNombre()).set("genero", artista.getGenero()).execute();
+        query.insertInto("tabla_artista").set("nombre", artista.getNombreArtistico()).set("genero", artista.getGeneroMusical()).execute();
         System.out.println("Artista guardado con éxito: " + artista.getNombreArtistico());
     }
 
     public void actualizarArtista(Artista artista) {
-        // query.update("tabla_artista").set("genero", artista.getGenero()).where("id = ?", artista.getId()).execute();
+        query.update("tabla_artista").set("genero", artista.getGeneroMusical()).where("id = ?", artista.getNombreArtistico()).execute();
         System.out.println("Artista actualizado con éxito: " + artista.getNombreArtistico());
     }
 
     public void eliminarArtista(Artista artista) {
-        // query.delete("tabla_artista").where("id = ?", artista.getId()).execute();
+
+        query.delete("tabla_artista").where("id = ?", artista.getNombreArtistico()).execute();
         System.out.println("Artista eliminado con éxito: " + artista.getNombreArtistico());
     }
-
-    // Otros métodos DAO para obtener artistas, realizar consultas, etc.
 }

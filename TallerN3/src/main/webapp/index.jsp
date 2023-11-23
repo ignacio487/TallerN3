@@ -16,7 +16,6 @@
     AsistenteDAO asistenteDAO = new AsistenteDAO(/* DSLContext o conexión a la base de datos */);
     ArtistaDAO artistaDAO = new ArtistaDAO(/* DSLContext o conexión a la base de datos */);
     EntradaDAO entradaDAO = new EntradaDAO(/* DSLContext o conexión a la base de datos */);
-
     // Obtener listas de eventos, asistentes, artistas y entradas
     ArrayList<EventoMusical> eventos = eventoDAO.crearEvento().obtenerEventos);
     ArrayList<Asistente> asistentes = asistenteDAO.guardarAsis();
